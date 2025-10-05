@@ -1,0 +1,33 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Ensure the root elements and the entire app fill the viewport height */
+html,
+body,
+#root {
+  height: 100%;
+}
+
+/* Use flexbox to create a full-height layout with the navbar and main content */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* The main content area should grow to fill the remaining space */
+.content-wrapper {
+  flex: 1;
+  overflow-y: auto; /* Adds a scrollbar only if the content overflows */
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
