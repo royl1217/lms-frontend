@@ -9,7 +9,7 @@ const FuzzySearchTool = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [selectedCourse, setSelectedCourse] = useState(null);
 
-  const apiUrl = process.env.REACT_APP_API_URL;
+  const apiUrl = process.env.REACT_APP_API_URL || "";
   const userID = localStorage.getItem("userID");
 
   useEffect(() => {

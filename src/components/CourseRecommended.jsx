@@ -13,8 +13,8 @@ const CourseRecommended = () => {
 
   const [descText, setDescText] = useState("");
 
-  const apiUrl_ai = process.env.REACT_APP_AI_API_URL;
-  const apiUrl = process.env.REACT_APP_API_URL;
+  const apiUrl_ai = process.env.REACT_APP_AI_API_URL || "";
+  const apiUrl = process.env.REACT_APP_API_URL || "";
   const userID = localStorage.getItem("userID");
 
   useEffect(() => {
