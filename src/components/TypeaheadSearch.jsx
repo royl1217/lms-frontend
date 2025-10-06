@@ -21,7 +21,7 @@ function CourseSearch() {
   const [isLoading, setIsLoading] = useState(false);
 
   // const apiUrl = process.env.REACT_APP_API_URL;
-  const apiUrl = "https://roy-app.com";
+  const apiUrl = "https://roy-app.com/express-api";
   const userID = localStorage.getItem("userID");
 
   useEffect(() => {

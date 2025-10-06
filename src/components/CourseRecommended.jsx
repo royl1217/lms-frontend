@@ -13,9 +13,10 @@ const CourseRecommended = () => {
 
   const [descText, setDescText] = useState("");
 
-  const apiUrl_ai = process.env.REACT_APP_AI_API_URL || "";
+  // const apiUrl_ai = process.env.REACT_APP_AI_API_URL || "";
+  const apiUrl_ai = "https://roy-app.com/flask-api";
   // const apiUrl = process.env.REACT_APP_API_URL;
-  const apiUrl = "https://roy-app.com";
+  const apiUrl = "https://roy-app.com/express-api";
   const userID = localStorage.getItem("userID");
 
   useEffect(() => {
