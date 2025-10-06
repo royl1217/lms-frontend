@@ -38,7 +38,7 @@ export default function Register() {
     try {
       // Make API call to backend
       // const apiUrl = process.env.REACT_APP_API_URL;
-      const apiUrl = "https://roy-app.com";
+      const apiUrl = "https://roy-app.com/express-api";
 
       // Check if email already used
       const response_existEmail = await fetch(`${apiUrl}/api/users`);
