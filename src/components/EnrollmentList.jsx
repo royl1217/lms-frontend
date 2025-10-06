@@ -10,7 +10,8 @@ const EnrollmentList = () => {
       setIsLoading(true);
 
       try {
-        const apiUrl = process.env.REACT_APP_API_URL || "";
+        // const apiUrl = process.env.REACT_APP_API_URL;
+        const apiUrl = "https://roy-app.com";
         const userID = localStorage.getItem("userID");
 
         const response = await fetch(`${apiUrl}/api/enrollments/${userID}`);
