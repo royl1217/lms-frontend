@@ -37,11 +37,10 @@ export default function Register() {
 
     try {
       // Make API call to backend
-      // const apiUrl = process.env.REACT_APP_API_URL;
-      const apiUrl = "https://roy-app.com/express-api";
+      const apiUrl_express = process.env.REACT_APP_EXPRESS_API_URL;
 
       // Check if email already used
-      const response_existEmail = await fetch(`${apiUrl}/api/users`);
+      const response_existEmail = await fetch(`${apiUrl_express}/api/users`);
       const data_existEmail = await response_existEmail.json();
 
       if (!response_existEmail.ok) {
@@ -62,7 +61,7 @@ export default function Register() {
       }
 
       // Add new account
-      const response = await fetch(`${apiUrl}/api/register`, {
+      const response = await fetch(`${apiUrl_express}/api/register`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

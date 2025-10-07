@@ -32,10 +32,9 @@ export default function Login() {
 
     try {
       // Make API call to backend
-      // const apiUrl = process.env.REACT_APP_API_URL;
-      const apiUrl = "https://roy-app.com/express-api";
+      const apiUrl_express = process.env.REACT_APP_EXPRESS_API_URL;
 
-      const response = await fetch(`${apiUrl}/api/login`, {
+      const response = await fetch(`${apiUrl_express}/api/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
