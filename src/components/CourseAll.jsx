@@ -154,7 +154,7 @@ const CourseAll = () => {
 
   return (
     <>
-      <h1 className="display-6 mb-3">All Courses</h1>
+      <h1 className="display-6 mb-3 text-light">All Courses</h1>
       {isLoading ? (
         <div className="spinner-border text-info my-3 mx-5" role="status">
           <span className="visually-hidden">Loading...</span>
@@ -203,7 +203,7 @@ const CourseAll = () => {
               >
                 Previous
               </button>
-              <span className="align-self-center">
+              <span className="align-self-center text-light">
                 Page {currentPage} of {totalPages}
               </span>
               <button

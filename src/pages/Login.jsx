@@ -87,7 +87,7 @@ export default function Login() {
             <h2 className="mb-4 text-center">Login to LMS</h2>
             <form onSubmit={handleSubmit} noValidate>
               <div className="mb-3">
-                <label htmlFor="email" className="form-label">
+                <label htmlFor="email" className="form-label text-light">
                   Email
                 </label>
                 <input
@@ -104,7 +104,7 @@ export default function Login() {
               </div>
 
               <div className="mb-3">
-                <label htmlFor="password" className="form-label">
+                <label htmlFor="password" className="form-label text-light">
                   Password
                 </label>
                 <input
@@ -139,8 +139,12 @@ export default function Login() {
               </div>
             )}
 
-            <div className="mt-3 text-center">
-              <Link type="button" className="btn btn-link" to="/register">
+            <div className="mt-3 text-center text-light">
+              <Link
+                type="button"
+                className="btn btn-link text-light"
+                to="/register"
+              >
                 Register
               </Link>
             </div>

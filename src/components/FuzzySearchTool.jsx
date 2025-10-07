@@ -74,7 +74,7 @@ const FuzzySearchTool = () => {
         </div>
       ) : (
         <div className="row justify-content-center">
-          <h2 className="mb-4">Course Search</h2>
+          <h2 className="mb-4 text-light">Course Search</h2>
           <Form>
             <Select
               className="basic-single"

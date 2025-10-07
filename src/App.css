@@ -25,11 +25,89 @@ body,
 .content-area {
   flex: 1;
   overflow-y: auto; /* Adds a scrollbar only if the content overflows */
+
+  /* Stack a semi-transparent black overlay on top of the image */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    url("./assets/campus.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.navbar-gradient {
+  background-image: linear-gradient(to right, #2c3e50, #4ca1af);
+  color: white;
 }
 
 .nav-link.active {
   font-weight: bold;
-  color: #007bff;
+  color: white;
+}
+
+.btn-primary {
+  background-color: #f1a20f !important;
+  color: white !important;
+  border: none !important;
+}
+
+.btn-primary:hover {
+  background-color: #cf8c0f !important;
+}
+
+.btn-secondary {
+  background-color: #4ca1af !important;
+  color: white !important;
+  border: none !important;
+}
+
+.btn-secondary:hover {
+  background-color: #428f9b !important;
+}
+
+.btn-danger {
+  background-color: #ff7f74 !important;
+  color: white !important;
+  border: none !important;
+}
+
+.btn-danger:hover {
+  background-color: #dc6a60 !important;
+}
+
+.btn-fit-content {
+  width: fit-content;
+  padding-inline: 3rem;
+}
+
+.text-primary {
+  color: #174e5c !important;
+}
+
+.rounded-table-container {
+  /* Apply border, border-radius, and overflow to the wrapper */
+  border-radius: 8px;
+  border-color: #428f9b;
+  overflow: hidden; /* Hides the corners of the inner table cells */
+  background-color: white;
+}
+
+.rounded-table-container th {
+  background-color: #428f9b;
+}
+
+.rounded-table-container th,
+.rounded-table-container td {
+  padding: 10px;
+  border: none;
+}
+.rounded-table-container tr {
+  border-top: 1px solid #428f9b;
+  border-bottom: 1px solid #428f9b;
+}
+.rounded-table-container tr:first-child {
+  border-top: none;
+}
+.rounded-table-container tr:last-child {
+  border-top: none;
 }
 
 .chatbot-icon-button {

@@ -97,7 +97,7 @@ const CourseRecommended = () => {
 
   return (
     <>
-      <h1 className="display-6 mb-3">Recommended Courses</h1>
+      <h1 className="display-6 mb-3 text-light">Recommended Courses</h1>
       {isLoading ? (
         <div className="spinner-border text-info my-3 mx-5" role="status">
           <span className="visually-hidden">Loading...</span>
@@ -127,7 +127,9 @@ const CourseRecommended = () => {
                 );
               })
             ) : (
-              <p>Must enroll at least one course to generate recommendations</p>
+              <p className="text-light">
+                Must enroll at least one course to generate recommendations
+              </p>
             )}
           </div>
         </>

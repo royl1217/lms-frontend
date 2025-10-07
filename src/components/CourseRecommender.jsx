@@ -35,7 +35,7 @@ const CourseRecommender = () => {
       ) : (
         <div className="row justify-content-center">
           {/* <div className="col-md-6"> */}
-          <h2 className="mb-4">Rule-based Course Recommender</h2>
+          <h2 className="mb-4 text-light">Rule-based Course Recommender</h2>
           <div className="mb-3 px-0">
             <input
               type="text"
@@ -45,7 +45,10 @@ const CourseRecommender = () => {
               onChange={(e) => setInterest(e.target.value)}
             />
           </div>
-          <button className="btn btn-primary" onClick={recommendCourse}>
+          <button
+            className="btn btn-primary btn-fit-content"
+            onClick={recommendCourse}
+          >
             Get Recommendation
           </button>
           {recommended && (

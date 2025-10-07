@@ -38,7 +38,7 @@ export default function Home() {
       <div className="container mt-5">
         <div className="row justify-content-center">
           <div className="col-md-12">
-            <h2 className="mb-4 text-center">
+            <h2 className="mb-4 text-center text-light">
               Welcome to the Learning Management System!
             </h2>
 

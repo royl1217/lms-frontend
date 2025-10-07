@@ -78,9 +78,11 @@ function CourseSearch() {
         </div>
       ) : (
         <div className="row justify-content-center">
-          <h2 className="mb-4">Smart Search using React Typeahead</h2>
+          <h2 className="mb-4 text-light">
+            Smart Search using React Typeahead
+          </h2>
           <Form.Group className="mb-3">
-            <Form.Label>Find a course:</Form.Label>
+            <Form.Label className="text-light">Find a course:</Form.Label>
             <Typeahead
               id="course-search-typeahead"
               labelKey="name"

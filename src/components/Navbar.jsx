@@ -24,15 +24,15 @@ const Navbar = (props) => {
       ];
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
+    <nav className="navbar navbar-expand-lg navbar-dark navbar-gradient">
       <div className="container-fluid">
         <a className="navbar-brand fs-4" href="/">
-          AI-LMS
+          Royl LMS
         </a>
 
         {localStorage.getItem("userName") && (
           <div className="d-flex justify-content-start align-items-center">
-            <p className="my-0 mx-2 text-info">
+            <p className="my-0 mx-2 text-light">
               Welcome, {localStorage.getItem("userName")}!
             </p>
           </div>
