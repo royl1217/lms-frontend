@@ -9,8 +9,7 @@ const FuzzySearchTool = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [selectedCourse, setSelectedCourse] = useState(null);
 
-  // const apiUrl = process.env.REACT_APP_API_URL;
-  const apiUrl = "https://roy-app.com/express-api";
+  const apiUrl_express = process.env.REACT_APP_EXPRESS_API_URL;
   const userID = localStorage.getItem("userID");
 
   useEffect(() => {
@@ -23,7 +22,7 @@ const FuzzySearchTool = () => {
         }
 
         const [allCoursesResponse] = await Promise.all([
-          fetch(`${apiUrl}/api/courses`),
+          fetch(`${apiUrl_express}/api/courses`),
         ]);
 
         if (!allCoursesResponse.ok) {
@@ -40,7 +39,7 @@ const FuzzySearchTool = () => {
       }
     };
 
-    if (apiUrl) {
+    if (apiUrl_express) {
       fetchData();
     } else {
       setMessage("API configuration error. Please contact support.");

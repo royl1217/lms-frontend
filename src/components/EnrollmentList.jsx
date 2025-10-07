@@ -10,11 +10,12 @@ const EnrollmentList = () => {
       setIsLoading(true);
 
       try {
-        // const apiUrl = process.env.REACT_APP_API_URL;
-        const apiUrl = "https://roy-app.com/express-api";
+        const apiUrl_express = process.env.REACT_APP_EXPRESS_API_URL;
         const userID = localStorage.getItem("userID");
 
-        const response = await fetch(`${apiUrl}/api/enrollments/${userID}`);
+        const response = await fetch(
+          `${apiUrl_express}/api/enrollments/${userID}`
+        );
 
         if (!response.ok) {
           throw new Error("Error Fetching Enrollment");

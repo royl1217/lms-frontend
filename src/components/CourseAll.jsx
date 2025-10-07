@@ -17,8 +17,7 @@ const CourseAll = () => {
   const [currentPage, setCurrentPage] = useState(1); // State for current page
   const COURSES_PER_PAGE = 10; // Number of courses per page
 
-  // const apiUrl = process.env.REACT_APP_API_URL;
-  const apiUrl = "https://roy-app.com/express-api";
+  const apiUrl_express = process.env.REACT_APP_EXPRESS_API_URL;
   const userID = localStorage.getItem("userID");
 
   useEffect(() => {
@@ -31,8 +30,8 @@ const CourseAll = () => {
         }
 
         const [coursesResponse, enrollmentsResponse] = await Promise.all([
-          fetch(`${apiUrl}/api/courses`),
-          fetch(`${apiUrl}/api/enrollments/${userID}`),
+          fetch(`${apiUrl_express}/api/courses`),
+          fetch(`${apiUrl_express}/api/enrollments/${userID}`),
         ]);
 
         if (!coursesResponse.ok) {
@@ -57,12 +56,12 @@ const CourseAll = () => {
       }
     };
 
-    if (apiUrl) {
+    if (apiUrl_express) {
       fetchData();
     } else {
       setMessage("API configuration error. Please contact support.");
     }
-  }, [message, modalContent, apiUrl, userID]);
+  }, [message, modalContent, apiUrl_express, userID]);
 
   const handleViewDescriptionClick = (title, text) => {
     // console.log(`You clicked on ${title[0]}!`);
@@ -73,7 +72,7 @@ const CourseAll = () => {
   const handleEnrollClick = async (title) => {
     try {
       // Add new enrollment record
-      const response = await fetch(`${apiUrl}/api/enrollments`, {
+      const response = await fetch(`${apiUrl_express}/api/enrollments`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -102,7 +101,7 @@ const CourseAll = () => {
   const handleDropClick = async (title) => {
     try {
       // Delete enrollment record
-      const response = await fetch(`${apiUrl}/api/enrollments`, {
+      const response = await fetch(`${apiUrl_express}/api/enrollments`, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",

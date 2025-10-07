@@ -13,10 +13,9 @@ const CourseRecommended = () => {
 
   const [descText, setDescText] = useState("");
 
-  // const apiUrl_ai = process.env.REACT_APP_AI_API_URL || "";
-  const apiUrl_ai = "https://roy-app.com/flask-api";
-  // const apiUrl = process.env.REACT_APP_API_URL;
-  const apiUrl = "https://roy-app.com/express-api";
+  const apiUrl_flask = process.env.REACT_APP_FLASK_API_URL;
+  const apiUrl_express = process.env.REACT_APP_EXPRESS_API_URL;
+
   const userID = localStorage.getItem("userID");
 
   useEffect(() => {
@@ -29,7 +28,7 @@ const CourseRecommended = () => {
         }
 
         const [recommendedCoursesResponse] = await Promise.all([
-          fetch(`${apiUrl_ai}/api/getRecommendations/${userID}`),
+          fetch(`${apiUrl_flask}/api/getRecommendations/${userID}`),
         ]);
 
         if (!recommendedCoursesResponse.ok) {
@@ -49,12 +48,12 @@ const CourseRecommended = () => {
       }
     };
 
-    if (apiUrl_ai) {
+    if (apiUrl_flask) {
       fetchData();
     } else {
       setMessage("API configuration error. Please contact support.");
     }
-  }, [message, modalContent, apiUrl, apiUrl_ai, userID]);
+  }, [message, modalContent, apiUrl_express, apiUrl_flask, userID]);
 
   const handleViewDescriptionClick = (title, text) => {
     // console.log(`You clicked on ${title[0]}!`);
@@ -65,7 +64,7 @@ const CourseRecommended = () => {
   const handleEnrollClick = async (title) => {
     try {
       // Add new enrollment record
-      const response = await fetch(`${apiUrl}/api/enrollments`, {
+      const response = await fetch(`${apiUrl_express}/api/enrollments`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

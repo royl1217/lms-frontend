@@ -20,8 +20,7 @@ function CourseSearch() {
   const [allCoursesData, setAllCoursesData] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
 
-  // const apiUrl = process.env.REACT_APP_API_URL;
-  const apiUrl = "https://roy-app.com/express-api";
+  const apiUrl_express = process.env.REACT_APP_EXPRESS_API_URL;
   const userID = localStorage.getItem("userID");
 
   useEffect(() => {
@@ -34,7 +33,7 @@ function CourseSearch() {
         }
 
         const [allCoursesResponse] = await Promise.all([
-          fetch(`${apiUrl}/api/courses`),
+          fetch(`${apiUrl_express}/api/courses`),
         ]);
 
         if (!allCoursesResponse.ok) {
@@ -54,12 +53,12 @@ function CourseSearch() {
       }
     };
 
-    if (apiUrl) {
+    if (apiUrl_express) {
       fetchData();
     } else {
       setMessage("API configuration error. Please contact support.");
     }
-  }, [message, apiUrl, userID]);
+  }, [message, apiUrl_express, userID]);
 
   const handleSelection = (selected) => {
     setSelectedCourses(selected);
